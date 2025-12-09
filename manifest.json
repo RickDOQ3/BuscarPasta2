@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Buscar Pasta OneDrive",
+  "version": "1.1",
+  "description": "Busca pastas no OneDrive automaticamente com estratégias avançadas",
+  
+  "permissions": [
+    "activeTab"
+  ],
+  
+  "host_permissions": [
+    "https://*.sharepoint.com/*",
+    "https://*.live.com/*",
+    "https://*.microsoft.com/*",
+    "https://automakers-my.sharepoint.com/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Buscar Pasta OneDrive"
+  },
+  
+  "content_scripts": [{
+    "matches": [
+      "https://automakers-my.sharepoint.com/*",
+      "https://*.sharepoint.com/*",
+      "https://*.live.com/*",
+      "https://*.microsoft.com/*"
+    ],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}
