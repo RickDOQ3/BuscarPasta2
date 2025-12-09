@@ -2,7 +2,7 @@ let pesquisaAtiva = false;
 let pastaProcurada = '';
 let timeoutBusca;
 let tentativasScroll = 0;
-const MAX_TENTATIVAS_SCROLL = 50;
+const MAX_TENTATIVAS_SCROLL = 300;
 let velocidadeRolagem = 1.5;
 let ultimoScrollHeight = 0;
 let tentativasMesmaAltura = 0;
@@ -651,4 +651,5 @@ setTimeout(debugInfo, 2000);
 window.addEventListener('beforeunload', function() {
   if (timeoutBusca) clearTimeout(timeoutBusca);
   observer.disconnect();
+
 });
